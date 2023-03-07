@@ -93,7 +93,7 @@ Please read at a *MINIMUM* the following pages. You don't need to be meticulous 
 ## Caesar Cypher
 If you want to know a brief history of the Caesar Cypher, feel free to read the [Wikipedia page](https://en.wikipedia.org/wiki/Caesar_cipher) for a summary. The wikipedia page also offers some formulas and examples that might help reinforce your understanding.
 
-In C, characters are represented as chars, which are typically one byte of memory. They also have a numerical value, such as 65 for 'A', 90 for 'Z', 97 for 'a', and 122 for 'z'. A full list of values can be seen here:
+In C, characters are represented as chars, which are typically one byte of memory. They also have a numerical value, such as 65 for `A`, 90 for `Z`, 97 for `a`, and 122 for `z`. A full list of values can be seen here:
 ![ASCII Table](https://www.asciitable.com/asciifull.gif "An ASCII Table").
 
 We can utilize this in order to both encrypt and decrypt information using a Caesar Cypher. While Caesar Cyphers are not cryptographically secure, they are a nice introduction to the idea of data obfuscation. For the purposes of this assignment, the **Barrier** struct contains a field called **spell**. This is a char array of a size determined in the **dungeon_settings.h** file. Every alphabetical character that is put into the **Barrier**'s **spell** field will use the first character in the array as the shift value. So for example, if the first character were 'T', it would represent a shift of 84.
@@ -106,9 +106,9 @@ For a more detailed read on Binary Search, feel free to peruse the [Wikipedia ar
 
 A Binary Search in Computer Science is an algorithm that splits a list in half, and then checks if the desired element is above or below the current position. It then splits that list in half, and repeats the previous steps until the element is found. While this is usually used to traverse an array to find a list element, this formula can also be utilized to find a floating point value. This is how we will utilize it.
 
-Our Dungeon will pick a random value between 0 and the value **MAX_PICK_ANGLE** defined in **dungeon_settings.h**. It is then up to our Rogue to guess that value. To do this, start by picking a value halfway between 0 and **MAX_PICK_ANGLE**, and put that in the **Rogue**'s **pick** field. The dungeon will put a value in **Trap**'s **direction** field to indicate whether the position is above or below the current **pick** value. (HINT: I recommend setting the value in **direction** to something like 't' after modifying your **pick** value so that you can tell when the value has changed. Otherwise it can be difficult to tell if you need to adjust your position or not.)
+Our Dungeon will pick a random value between `0` and the value **MAX_PICK_ANGLE** defined in **dungeon_settings.h**. It is then up to our Rogue to guess that value. To do this, start by picking a value halfway between `0` and **MAX_PICK_ANGLE**, and put that in the **Rogue**'s **pick** field. The dungeon will put a value in **Trap**'s **direction** field to indicate whether the position is above or below the current **pick** value. (HINT: I recommend setting the value in **direction** to something like 't' after modifying your **pick** value so that you can tell when the value has changed. Otherwise it can be difficult to tell if you need to adjust your position or not.)
 
-When the pick is within the threshold defined by **LOCK_THRESHOLD** in **dungeon_settings.h**, the dungeon will place a '-' character in **direction**. Use this information to tell the Rogue to stop searching for new values.
+When the pick is within the threshold defined by **LOCK_THRESHOLD** in **dungeon_settings.h**, the dungeon will place a `-` character in **direction**. Use this information to tell the Rogue to stop searching for new values.
 
 ## Timeline
 
@@ -118,7 +118,7 @@ Week 1-2: Create your makefile, and have your `game`, `barbarian`, `wizard`, and
 
 Week 3-4: All of your processes should be able to access [shared memory](https://man7.org/linux/man-pages/man7/shm_overview.7.html) and interpret the data that matters to them. Ensure that you're using [fork](https://man7.org/linux/man-pages/man2/fork.2.html) and [exec](https://man7.org/linux/man-pages/man3/exec.3.html) properly. Even if all of your processes don't fully work yet, they should all be runnable, and they should exist until they are terminated.
 
-Week 5-6: Your `barbarian` process should be 100% functional, and your `wizard` and `rogue` processes should work at least to some degree. Every process should be able to receive a signal without crashing, and every process should be able to do something with shared memory when they receive a signal. Please also ensure that you're cleaning up after yourself by this point. Clean up your shared memory, terminate your processes properly, etc. A field, `running` exists in the dungeon to help with this. If dungeon->running == false, all processes should be terminated. (I recommend including in all of your while loops a condition to exit if this `running` field becomes false at any point.)
+Week 5-6: Your `barbarian` process should be 100% functional, and your `wizard` and `rogue` processes should work at least to some degree. Every process should be able to receive a signal without crashing, and every process should be able to do something with shared memory when they receive a signal. Please also ensure that you're cleaning up after yourself by this point. Clean up your shared memory, terminate your processes properly, etc. A field, `running` exists in the dungeon to help with this. If `dungeon->running == false`, all processes should be terminated. (I recommend including in all of your while loops a condition to exit if this `running` field becomes false at any point.)
 
 Week 7-8: Every process should be successful in running. If you're not getting a near 100% success rate, please see me in my office hours to try and figure out what might be going wrong. A failure once in a blue moon is nothing to worry about. Finally, your semaphores should be set up by now.
 
@@ -132,36 +132,36 @@ Points | Requirement
 20     | You successfully created and managed shared memory
 10      | All of your processes run concurrently, and they can all access shared memory.
 10      | Your processes do not crash upon receiving signals, or through regular use.
-20     | 2 points for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to 20 points.
-40     | 8 points for holding down the semaphores correctly for up to four ticks, for 32 points. Then, you must release your semaphores to receive the last eight points.
+20     | `2` points for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to `20` points.
+40     | `8` points for holding down the semaphores correctly for up to four ticks, for `32` points. Then, you must release your semaphores to receive the last eight points.
 
 Partial credit may be given based on degree of success for any of the above, and additional points may be deducted in rare cases of completely disregarding the point of the directions. (Bear in mind, it's okay to experiment and have odd solutions, but if you do something along the lines of just guessing random phrases for the Wizard, for example, or by using length to calculate which phrase it is, this is grounds for points being lost. As long as your solution keeps within the spirit of the assignment, you shouldn't have to worry about this.)
 
 ## A quick C refresher:
 
 Pointers - A pointer is only an address, on its own it does not contain any information. It must be given memory in some way. This is most often seen with [malloc](https://man7.org/linux/man-pages/man3/free.3.html), or its variations. Until initialized, pointers tend to seg fault when used. The information at the end of pointers is accessed with one of the following:
- - (*myPointer)
- - myPointer[index]
- - myPointer->someValue (this is mostly seen with structs)
+ - `(*myPointer)`
+ - `myPointer[index]`
+ - `myPointer->someValue` (this is mostly seen with structs)
 
 Arrays - Arrays in C/C++ exist in two forms. Either pre-allocated, or dynamic. You may reassign individual values within pre-allocated arrays, but if you try to assign directly to a pre-allocated array, your program will in the best case either not compile or crash, and worst case will perform undefined behavior. Dynamic memory can be reassigned to, but you risk memory leaks if you do not [free](https://man7.org/linux/man-pages/man3/free.3p.html) your memory.
 
 Pre-allocated arrays:
- - int myArr[10];
+ - `int myArr[10];`
 
 Dynamically allocated arrays:
- - int *myArr = malloc(sizeof(int) * 10);
+ - `int *myArr = malloc(sizeof(int) * 10);`
 
 [printf](https://man7.org/linux/man-pages/man3/printf.3.html) - This prints to the terminal by default. It uses string substitutions with %'s to format your string. It will look something like this:
 
 `printf("my string: %s, my int: %d, my address: %p, my char: %c", someString, someInt, somePointer, someChar);`
 
-[C-style strings](https://man7.org/linux/man-pages/man3/string.3.html) - C is a more archaic language, and lacks some features that you might be used to, including strings. In C, a string is a char*, or char[] that ends with a literal '\0' character (null-terminator). When printing, if you manually created a char[], and funky stuff happens or you segfault after trying to print using that string, make sure that the very last element is a null-terminator ('\0') character, otherwise your program won't know where the string ends, and might even traverse your entire computer's memory looking for an end.
+[C-style strings](https://man7.org/linux/man-pages/man3/string.3.html) - C is a more archaic language, and lacks some features that you might be used to, including strings. In C, a string is a `char*`, or `char[]` that ends with a literal `\0` character (null-terminator). When printing, if you manually created a char[], and funky stuff happens or you segfault after trying to print using that string, make sure that the very last element is a null-terminator `\0` character, otherwise your program won't know where the string ends, and might even traverse your entire computer's memory looking for an end.
 
 ## Recommendations:
  - If your `Rogue` is for some reason not modifying shared memory properly, double-check that you've terminated the process, and that it hasn't crashed. Both can lead to perplexing errors.
- - If the dungeon is printing '_' characters for your wizard's spell, that means that you used an invalid character. Check your math on your caesar cypher, and make sure that you're wrapping properly and ignoring punctuation correctly.
- - For the Rogue, try setting **direction** to 't' or a similar unused character every time you set the value in **pick**, and then do not do anything while the character is still 't'.
+ - If the dungeon is printing `_` characters for your wizard's spell, that means that you used an invalid character. Check your math on your caesar cypher, and make sure that you're wrapping properly and ignoring punctuation correctly.
+ - For the Rogue, try setting **direction** to `t` or a similar unused character every time you set the value in **pick**, and then do not do anything while the character is still `t`.
  - If you find your program handling one signal fine, and then crashing, try setting up more information in your [sigaction](https://man7.org/linux/man-pages/man2/sigaction.2.html) before registering your signal handling. You might need to set the restart flag.
  - Do not wait to start working. Sleep clears your mental state and allows you to look at your code with a fresh mind. You will likely need to refactor this assignment two or three times at least. This takes time, and is best not left until the day before the assignment is due.
  - Remember, commit early, commit often. The deadline can sneak up on you. It's better to have almost everything turned in when the deadline passes than nothing turned in. Just do a commit every time you finish for the day and push it to GitHub and you won't have to worry about this.
