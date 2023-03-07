@@ -129,7 +129,7 @@ An automatic *zero* will apply to any repository with the following:
 - your written code is not commented
 - there is no makefile
 - there are no commits to GitHub
-- your source code is is archived (.zip or similar) or any attempt is made to obfuscate or hide code
+- your source code is is archived (`.zip`, `.rar`, or similar) or any attempt is made to obfuscate or hide code
 - or there are no source files to run
 
 Points | Requirement
