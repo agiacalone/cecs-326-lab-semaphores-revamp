@@ -162,7 +162,7 @@ Dynamically allocated arrays:
 
 `printf("my string: %s, my int: %d, my address: %p, my char: %c", someString, someInt, somePointer, someChar);`
 
-[C-style strings](https://man7.org/linux/man-pages/man3/string.3.html) - C is a more archaic language, and lacks some features that you might be used to, including strings. In C, a string is a `char*`, or `char[]` that ends with a literal `\0` character (null-terminator). When printing, if you manually created a char[], and funky stuff happens or you segfault after trying to print using that string, make sure that the very last element is a null-terminator `\0` character, otherwise your program won't know where the string ends, and might even traverse your entire computer's memory looking for an end.
+[C-style strings](https://man7.org/linux/man-pages/man3/string.3.html) - C is a more archaic language, and lacks some features that you might be used to, including strings. In C, a string is a `char*`, or `char[]` that ends with a literal `\0` character (null-terminator). When printing, if you manually created a `char[]`, and funky stuff happens or you segfault after trying to print using that string, make sure that the very last element is a null-terminator `\0` character, otherwise your program won't know where the string ends, and might even traverse your entire computer's memory looking for an end.
 
 ## Recommendations:
  - If your `Rogue` is for some reason not modifying shared memory properly, double-check that you've terminated the process, and that it hasn't crashed. Both can lead to perplexing errors.
