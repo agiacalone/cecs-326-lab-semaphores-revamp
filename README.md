@@ -132,8 +132,8 @@ Points | Requirement
 20     | You successfully created and managed shared memory
 10      | All of your processes run concurrently, and they can all access shared memory.
 10      | Your processes do not crash upon receiving signals, or through regular use.
-20     | 1 point for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to 10 points.
-40     | 4 points for holding down the semaphores correctly for up to four ticks, for 16 points. Then, you must release your semaphores to receive the last four points.
+20     | 2 points for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to 20 points.
+40     | 8 points for holding down the semaphores correctly for up to four ticks, for 32 points. Then, you must release your semaphores to receive the last eight points.
 
 Partial credit may be given based on degree of success for any of the above, and additional points may be deducted in rare cases of completely disregarding the point of the directions. (Bear in mind, it's okay to experiment and have odd solutions, but if you do something along the lines of just guessing random phrases for the Wizard, for example, or by using length to calculate which phrase it is, this is grounds for points being lost. As long as your solution keeps within the spirit of the assignment, you shouldn't have to worry about this.)
 
