@@ -124,7 +124,13 @@ Week 7-8: Every process should be successful in running. If you're not getting a
 
 ## Grading scale:
 
-### If the code is not commented, there is no makefile, there are no commits to GitHub, or there are no source files, this is an automatic zero. You must have comments, you must have a Makefile, you must commit the assignment to GitHub, and you must have at minimum four source files. Also, DO NOT compress your files into a .zip or other similar archived format. I will not grade them if they are turned in as such.
+### Be aware!!
+An automatic *zero* will apply to any repository with the following:
+- your written code is not commented
+- there is no makefile
+- there are no commits to GitHub
+- your source code is is archived (.zip or similar) or any attempt is made to obfuscate or hide code
+- or there are no source files to run
 
 Points | Requirement
 ------ | -----------
