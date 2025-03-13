@@ -6,7 +6,7 @@ The goal of this assignment is to become familiar with concurrent processing in 
 
 You will create four separate processes that work with the same segment of shared memory in order to communicate information. This will be done as an RPG-based game with three characters: a barbarian, a wizard, and a rogue. You will also create a program that is in charge of starting the game and running all of the necessary processes. This is required to be done on a POSIX system (i.e. your Linux virtual machine that we created during the first few weeks of class).
 
-Finally, the last stage of this assignment is to become familiar with semaphores. As the last stage of the dungeon, semaphores will be used to "hold" open a door (remember the down(&mutex) and up(&mutex) from lecture) and allow your party to get the treasure inside. The "treasure" earns more than just gold for your characters, though. It earns you points!
+Finally, the last stage of this assignment is to become familiar with semaphores. As the last stage of the dungeon, semaphores will be used to "hold" open a door (remember the `down(&mutex)` and `up(&mutex)` from lecture) and allow your party to get the treasure inside. The "treasure" earns more than just gold for your characters, though. It earns you points!
 
 ## The Three Classes Overview
 
