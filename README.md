@@ -20,7 +20,7 @@ When the Barbarian receives a signal (defined in `dungeon_settings.h`), the Barb
 
 The Wizard is probably the second class that you should make. The Wizard works as follows:
 
-When the Wizard receives a signal (defined in `dungeon_settings.h`), the Wizard reads the *Caesar Cypher* placed in the Barrier's **spell** field. The Wizard then decodes the [*Caesar Cypher*](#Caesar-Cypher "Goto Caesar Cypher"), using the first character as the key, and copies the decoded message into the Wizard's **spell** field. The Dungeon will wait an amount of time defined in dungeon_settings.h as **SECONDS_TO_GUESS_BARRIER** for the decoding process to complete. If the Wizard's **spell** field matches the decoded message after the Dungeon has finished waiting, then this will count as success.
+When the Wizard receives a signal (defined in `dungeon_settings.h`), the Wizard reads the *Caesar cipher* placed in the Barrier's **spell** field. The Wizard then decodes the [*Caesar Cipher*](#Caesar-Cipher "Goto Caesar Cipher"), using the first character as the key, and copies the decoded message into the Wizard's **spell** field. The Dungeon will wait an amount of time defined in dungeon_settings.h as **SECONDS_TO_GUESS_BARRIER** for the decoding process to complete. If the Wizard's **spell** field matches the decoded message after the Dungeon has finished waiting, then this will count as success.
 
 ### The Rogue
 
@@ -90,13 +90,13 @@ Please read at a *MINIMUM* the following pages. You don't need to be meticulous 
 
 * Q7. How do I determine the size of a struct in bytes?
 
-## Caesar Cypher
-If you want to know a brief history of the Caesar Cypher, feel free to read the [Wikipedia page](https://en.wikipedia.org/wiki/Caesar_cipher) for a summary. The wikipedia page also offers some formulas and examples that might help reinforce your understanding.
+## Caesar Cipher
+If you want to know a brief history of the Caesar Cipher, feel free to read the [Wikipedia page](https://en.wikipedia.org/wiki/Caesar_cipher) for a summary. The wikipedia page also offers some formulas and examples that might help reinforce your understanding.
 
 In C, characters are represented as chars, which are typically one byte of memory. They also have a numerical value, such as `65` for `A`, `90` for `Z`, `97` for `a`, and `122` for `z`. A full list of values can be seen here:
 ![ASCII Table](https://www.asciitable.com/asciifull.gif "An ASCII Table").
 
-We can utilize this in order to both encrypt and decrypt information using a Caesar Cypher. While Caesar Cyphers are not cryptographically secure, they are a nice introduction to the idea of data obfuscation. For the purposes of this assignment, the **Barrier** struct contains a field called **spell**. This is a char array of a size determined in the `dungeon_settings.h` file. Every alphabetical character that is put into the **Barrier**'s **spell** field will use the first character in the array as the shift value. So for example, if the first character were `T`, it would represent a shift of `84`.
+We can utilize this in order to both encrypt and decrypt information using a Caesar Cipher. While Caesar Ciphers are not cryptographically secure, they are a nice introduction to the idea of data obfuscation. For the purposes of this assignment, the **Barrier** struct contains a field called **spell**. This is a char array of a size determined in the `dungeon_settings.h` file. Every alphabetical character that is put into the **Barrier**'s **spell** field will use the first character in the array as the shift value. So for example, if the first character were `T`, it would represent a shift of `84`.
 
 Notice that in that example the value of `84 > 26`, and thus the shift would be greater than the number of characters in the alphabet. You will have to "roll" the numbers using modulo in order to keep them within the same alphabet. Capitalization will remain consistent. If a character in the **spell** field is capitalized, it will also be capitalized in the final answer. If it is lower case, it will be lower case in the final answer. Punctuation and spaces do not need to be modified at all.
 
@@ -166,7 +166,7 @@ Dynamically allocated arrays:
 
 ## Recommendations:
  - If your `Rogue` is for some reason not modifying shared memory properly, double-check that you've terminated the process, and that it hasn't crashed. Both can lead to perplexing errors.
- - If the dungeon is printing `_` characters for your wizard's spell, that means that you used an invalid character. Check your math on your caesar cypher, and make sure that you're wrapping properly and ignoring punctuation correctly.
+ - If the dungeon is printing `_` characters for your wizard's spell, that means that you used an invalid character. Check your math on your caesar Cipher, and make sure that you're wrapping properly and ignoring punctuation correctly.
  - For the Rogue, try setting **direction** to `t` or a similar unused character every time you set the value in **pick**, and then do not do anything while the character is still `t`.
  - If you find your program handling one signal fine, and then crashing, try setting up more information in your [sigaction](https://man7.org/linux/man-pages/man2/sigaction.2.html) before registering your signal handling. You might need to set the restart flag.
  - Do not wait to start working. Sleep clears your mental state and allows you to look at your code with a fresh mind. You will likely need to refactor this assignment two or three times at least. This takes time, and is best not left until the day before the assignment is due.
