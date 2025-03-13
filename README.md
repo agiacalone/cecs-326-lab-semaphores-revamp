@@ -175,7 +175,7 @@ Dynamically allocated arrays:
  - Remember, commit early, commit often. The deadline can sneak up on you. It's better to have almost everything turned in when the deadline passes than nothing turned in. Just do a commit every time you finish for the day and push it to GitHub and you won't have to worry about this.
  - Be good friends with sleep and usleep. These functions force your process to relinquish some time, and this might sometimes be necessary to play nicely with other processes, including the dungeon! Remember: If you're using multiple processes, and you want to let another one run, just do a quick usleep.
 
-## Some miscellanous useful information:
+## Some miscellaneous useful information:
 ### Helpful Linux/Unix terminal commands:
 - [touch](https://man7.org/linux/man-pages/man1/touch.1.html) - to create your files
 - [htop](https://man7.org/linux/man-pages/man1/htop.1.html) - for if you want to see if any errant processes are still running
