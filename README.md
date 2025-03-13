@@ -32,6 +32,8 @@ Every X microseconds, the Dungeon will check the field **pick** in the Rogue str
 
 ## The Game and Dungeon
 
+#### Note! You must rename one of the existing dungeon files to `dungeon.o` in order for this program to work. Pick the option for your architecture.
+
 Please make a `game.c` file and have that be your game's launcher. This should be the code responsible for calling fork and exec. Once you have launched all of your characters, call `RunDungeon` using the pid's of the character classes that you launched. If something isn't set up right, you will likely see an appropriate error.
 
 The Dungeon will be given to you as a .o object file. This can be easily compiled into your code by including it in your compile arguments. Example:
@@ -126,20 +128,20 @@ Week 7-8: Every process should be successful in running. If you're not getting a
 
 ### Be aware!!
 An automatic *zero* will apply to any repository with the following:
-- your written code is not commented
-- there is no makefile
-- there are no commits to GitHub
-- your source code is is archived (`.zip`, `.rar`, or similar) or any attempt is made to obfuscate or hide code
+- Your written code is not commented.
+- You did not include a makefile
+- There are no commits to GitHub
+- Your source code is is archived (`.zip`, `.rar`, or similar) or any attempt is made to obfuscate or hide code
 - or there are no source files to run
 
-Points | Requirement
------- | -----------
-20     | Your code compiles and runs successfully, and you have followed the rules.
-20     | You successfully created and managed shared memory
-10      | All of your processes run concurrently, and they can all access shared memory.
-10      | Your processes do not crash upon receiving signals, or through regular use.
-20     | `2` points for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to `20` points.
-40     | `8` points for holding down the semaphores correctly for up to four ticks, for `32` points. Then, you must release your semaphores to receive the last eight points.
+Percent | Requirement
+------- | -----------
+15%     | Your code compiles and runs successfully, and you have followed the rules.
+15%     | You successfully created and managed shared memory
+15%     | All of your processes run concurrently, and they can all access shared memory.
+10%     | Your processes do not crash upon receiving signals, or through regular use.
+15%     | `2` points for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to `20` points (Divide by percent--points are weighted).
+30%     | `8` points for holding down the semaphores correctly for up to four ticks, for `32` points. Then, you must release your semaphores to receive the last eight points (Divide by percent--points are weighted).
 
 Partial credit may be given based on degree of success for any of the above, and additional points may be deducted in rare cases of completely disregarding the point of the directions. (Bear in mind, it's okay to experiment and have odd solutions, but if you do something along the lines of just guessing random phrases for the Wizard, for example, or by using length to calculate which phrase it is, this is grounds for points being lost. As long as your solution keeps within the spirit of the assignment, you shouldn't have to worry about this.)
 
