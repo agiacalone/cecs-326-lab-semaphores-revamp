@@ -55,10 +55,12 @@
 //and then the door allowed to close before this amount of time passes. Default: 10
 #define TIME_TREASURE_AVAILABLE (10)
 
-//This is how many points you receive for each correct character when getting the treasure at the end. Default: 4
-#define POINTS_PER_TREASURE_CHAR (4)
+//This is how many points you receive for each correct character when getting the treasure at the end. Default: 55
+#define POINTS_PER_TREASURE_CHAR (55)
 
-//This is how many points you get for unblocking the semaphores after getting the treasure at the end. Default: 4
-#define POINTS_FOR_POSTING_SEMAPHORES (4)
+//This is how many points you get for unblocking the semaphores after getting the treasure at the end. Default: 40
+#define POINTS_FOR_POSTING_SEMAPHORES (40)
+
+#define POINTS_FOR_SEMAPHORES (POINTS_PER_TREASURE_CHAR * 4 + POINTS_FOR_POSTING_SEMAPHORES)
 
 #endif
