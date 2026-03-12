@@ -134,14 +134,14 @@ An automatic *zero* will apply to any repository with the following:
 - Your source code is is archived (`.zip`, `.rar`, or similar) or any attempt is made to obfuscate or hide code
 - or there are no source files to run
 
-Percent | Requirement
+Points | Requirement
 ------- | -----------
-15%     | Your code compiles and runs successfully, and you have followed the rules.
-15%     | You successfully created and managed shared memory
-15%     | All of your processes run concurrently, and they can all access shared memory.
-10%     | Your processes do not crash upon receiving signals, or through regular use.
-15%     | `2` points for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to `20` points (Divide by percent--points are weighted).
-30%     | `8` points for holding down the semaphores correctly for up to four ticks, for `32` points. Then, you must release your semaphores to receive the last eight points (Divide by percent--points are weighted).
+20     | Your code compiles and runs successfully, and you have followed the rules.
+30     | You successfully created and managed shared memory
+20     | All of your processes run concurrently, and they can all access shared memory.
+20     | Your processes do not crash upon receiving signals, or through regular use.
+10     | `1` point for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to `10` points.
+260    | `55` points for each correct treasure character obtained by the Rogue, for up to `220` points. Then, you must release your semaphores correctly to receive the last `40` points.
 
 Partial credit may be given based on degree of success for any of the above, and additional points may be deducted in rare cases of completely disregarding the point of the directions. (Bear in mind, it's okay to experiment and have odd solutions, but if you do something along the lines of just guessing random phrases for the Wizard, for example, or by using length to calculate which phrase it is, this is grounds for points being lost. As long as your solution keeps within the spirit of the assignment, you shouldn't have to worry about this.)
 

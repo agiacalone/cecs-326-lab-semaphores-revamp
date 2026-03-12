@@ -7,6 +7,7 @@
 
 //This is how many rounds the dungeon will play at a minimum. Default: 10
 #define NUM_ROUNDS (10)
+#define POINTS_PER_ROUND (5)
 
 //This is how long the game will allow the rogue to try to guess the correct number for picking the lock. Default: 4
 #define SECONDS_TO_PICK (4)
@@ -58,8 +59,8 @@
 //This is how many points you receive for each correct character when getting the treasure at the end. Default: 55
 #define POINTS_PER_TREASURE_CHAR (55)
 
-//This is how many points you get for unblocking the semaphores after getting the treasure at the end. Default: 40
-#define POINTS_FOR_POSTING_SEMAPHORES (40)
+//This is how many points you get for unblocking the semaphores after getting the treasure at the end. Default: 0
+#define POINTS_FOR_POSTING_SEMAPHORES (0) 
 
 #define POINTS_FOR_SEMAPHORES (POINTS_PER_TREASURE_CHAR * 4 + POINTS_FOR_POSTING_SEMAPHORES)
 
