@@ -56,6 +56,8 @@ After your characters have successfully arrived at the end of the dungeon,  they
 
 The dungeon will send a new signal, defined in `dungeon_settings.h` as `SEMAPHORE_SIGNAL`. Make sure that your classes can handle it without crashing! After your Rogue gets all four letters from the "treasure" field, copy them into the "spoils" field of the Dungeon, and release the semaphores. Note: The treasure field will only give one character at a time, and it will pause between adding additional characters. It will also not be null terminated, so make sure you plan around tackling that problem!
 
+Each correct treasure character is worth `55` points for a maximum of `220` points. Getting all four characters also demonstrates that you have handled your semaphores correctly for full credit on this section.
+
 Once the Rogue has gotten all of the treasure, it is up to you how you want to handle re-opening the semaphores. Do you want the Wizard and Barbarian to wait until the Rogue has four characters in the `spoils` field, and then immediately release the door? Do you want the Rogue to send a signal to the Wizard and Barbarian to release the door? This part is up to you to figure out. By now, if you've gotten this far, you should have at least one or two ideas of how to tackle this.
 
 Note: Your semaphores should be created before you call `RunDungeon`. Also, the `treasure` and `spoils` fields will be initialized to null terminators before their values are used. This can be useful to note.
