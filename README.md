@@ -32,7 +32,10 @@ Every X microseconds, the Dungeon will check the field **pick** in the Rogue str
 
 ## The Game and Dungeon
 
-#### Note! You must rename one of the existing dungeon files to `dungeon.o` in order for this program to work. Pick the option for your architecture.
+#### Note! You must rename one of the existing dungeon files to `dungeon.o` in order for this program to work. Pick the option for your architecture:
+- `dungeon_X86_64.o` — Linux on x86_64 (the lab VMs, most desktops/laptops)
+- `dungeon_ARM64_linux.o` — Linux on arm64 (e.g. Raspberry Pi, ARM cloud VMs, asahi)
+- `dungeon_ARM64.o` — macOS on Apple Silicon
 
 Please make a `game.c` file and have that be your game's launcher. This should be the code responsible for calling fork and exec. Once you have launched all of your characters, call `RunDungeon` using the pid's of the character classes that you launched. If something isn't set up right, you will likely see an appropriate error.
 
