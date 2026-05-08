@@ -142,8 +142,10 @@ Points | Requirement
 30     | You successfully created and managed shared memory
 20     | All of your processes run concurrently, and they can all access shared memory.
 20     | Your processes do not crash upon receiving signals, or through regular use.
-10     | `1` point for every successful run of the dungeon. I will run each character twice, followed by four random runs for up to `10` points.
-260    | `55` points for each correct treasure character obtained by the Rogue, for up to `220` points. Then, you must release your semaphores correctly to receive the last `40` points.
+50     | `5` points for every successful run of the dungeon (`NUM_ROUNDS = 10`, `POINTS_PER_ROUND = 5`). I will run each character at least twice, followed by additional random runs for up to `50` points.
+220    | `55` points for each correct treasure character obtained by the Rogue, for up to `220` points. Getting all four characters also demonstrates that your semaphores were released correctly — they are inseparable.
+
+Total possible: **360 points.** The dungeon binary tallies and prints all of the above automatically.
 
 Partial credit may be given based on degree of success for any of the above, and additional points may be deducted in rare cases of completely disregarding the point of the directions. (Bear in mind, it's okay to experiment and have odd solutions, but if you do something along the lines of just guessing random phrases for the Wizard, for example, or by using length to calculate which phrase it is, this is grounds for points being lost. As long as your solution keeps within the spirit of the assignment, you shouldn't have to worry about this.)
 
