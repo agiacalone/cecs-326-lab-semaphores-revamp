@@ -193,6 +193,22 @@ Dynamically allocated arrays:
 - Order of function definitions matters in C. You can get around this, however, by *declaring* functions before using them. [More on that here](https://en.cppreference.com/w/c/language/functions). This is where a header file might come in handy.
 - If the implementation part of this seems a bit general, and open to interpretation, that's because it is. As computer scientists and engineers, I expect you to have some level of problem solving skills and the ability to research problems to find solutions. While I have certainly given you plenty of links to get you started, this is far from all of the information you will need to know in order to get a 100% in this lab. Be curious, ask questions, hypothesize and test. That's the *science* part of Computer Science.
 
+## Pushing and Grading
+
+GitHub gives this course a fixed number of Actions minutes each month. Every student's pushes draw from the same pool, and last month frequent pushes used all of it.
+
+- **Test on your own machine.** Compile and run your program against the dungeon locally until it behaves the way you expect. Do not use GitHub as your test runner.
+- **Push at the end of each work session**, not after every small change.
+- **Each repository is graded at most once an hour.** A push within an hour of your last graded push is saved but not graded. The check on that commit reads "Not graded" and says when grading resumes.
+- **You can submit your final version at any time** by pushing a tag. This is graded even inside the hour:
+
+  ```sh
+  TAG="submit/final-$(date +%Y%m%d-%H%M)"
+  git tag "$TAG" && git push origin "$TAG"
+  ```
+
+The instructor also re-runs grading on your final commit after the deadline.
+
 ## Deliverables
 
 I will require the following items for grading:
